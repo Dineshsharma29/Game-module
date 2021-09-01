@@ -3,7 +3,7 @@
 const modal = document.querySelector(".modal");
 const modal1 = document.querySelector(".modal1");
 const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".close-modal");
+const btnCloseModal = document.querySelectorAll(".close-modal");
 const btnsOpenModal = document.querySelectorAll(".show-modal");
 const btnsOpenModal1 = document.querySelectorAll(".show-modal1");
 const btnsOpenModal2 = document.querySelectorAll(".show-modal2");
@@ -26,9 +26,9 @@ const closeModal = function () {
 
 for (let i = 0; i < btnsOpenModal.length; i++) {
   btnsOpenModal[i].addEventListener("click", openModal);
+  btnCloseModal[i].addEventListener("click", closeModal);
 }
 
-btnCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (e) {
